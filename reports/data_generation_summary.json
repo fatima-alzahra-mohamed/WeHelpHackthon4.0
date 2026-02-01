@@ -1,0 +1,57 @@
+{
+  "total_records": 10000,
+  "target_distribution": {
+    "0": 9214,
+    "1": 786
+  },
+  "default_rate": 0.0786,
+  "missing_values": {
+    "applicant_id": 0,
+    "age": 0,
+    "gender": 0,
+    "governorate": 0,
+    "education": 0,
+    "payment_on_time_rate": 0,
+    "transaction_regularity_score": 0,
+    "dispute_rate": 0,
+    "months_with_provider": 0,
+    "avg_monthly_airtime_tnd": 0,
+    "mobile_topup_frequency": 0,
+    "business_hours_data_usage": 0,
+    "mobile_money_account": 0,
+    "avg_monthly_transactions": 0,
+    "marketplace_seller_rating": 8030,
+    "completed_transactions": 0,
+    "receives_remittances": 0,
+    "avg_monthly_remittance_tnd": 0,
+    "peer_transfer_network_size": 0,
+    "location_consistency_score": 0,
+    "loan_product_category": 0,
+    "requested_amount_tnd": 0,
+    "term_months": 0,
+    "max_financing_ratio": 0,
+    "max_term_months": 0,
+    "product_cap_tnd": 5113,
+    "requires_appraisal_flag": 0,
+    "TARGET": 0
+  },
+  "loan_categories": {
+    "Consumer": 4428,
+    "Housing": 3705,
+    "Business": 1045,
+    "Vehicle": 459,
+    "Corporate": 363
+  },
+  "governorates": 21,
+  "age_range": {
+    "min": 21,
+    "max": 70,
+    "mean": 38.1357
+  },
+  "loan_amount_stats": {
+    "min": 2079.17,
+    "max": 1163056.59,
+    "mean": 103206.88618699998,
+    "median": 52477.83
+  }
+}

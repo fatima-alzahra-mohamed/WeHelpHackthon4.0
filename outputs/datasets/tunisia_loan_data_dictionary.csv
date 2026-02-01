@@ -1,0 +1,29 @@
+column,dtype,description,leakage_risk
+applicant_id,int64,Unique applicant identifier,none
+age,int64,Applicant age in years,none
+gender,object,Gender (M/F),none
+governorate,object,Tunisia governorate of residence,none
+education,object,Highest education level attained,none
+payment_on_time_rate,float64,Historical on-time payment rate (0-1) from mobile/telecom bills,none
+transaction_regularity_score,float64,Transaction consistency score (0-100),none
+dispute_rate,float64,Rate of payment disputes or chargebacks (0-1),none
+months_with_provider,int64,Months with current telecom provider,none
+avg_monthly_airtime_tnd,float64,Average monthly mobile airtime spending in TND,none
+mobile_topup_frequency,int64,Number of mobile top-ups per month,none
+business_hours_data_usage,float64,Percentage of data used during business hours,none
+mobile_money_account,int64,"Has active mobile money account (1=yes, 0=no)",none
+avg_monthly_transactions,int64,Average monthly mobile money transactions,none
+marketplace_seller_rating,float64,"E-commerce seller rating (0-5, null if not seller)",none
+completed_transactions,int64,Number of completed marketplace transactions,none
+receives_remittances,int64,"Receives international remittances (1=yes, 0=no)",none
+avg_monthly_remittance_tnd,float64,Average monthly remittance in TND,none
+peer_transfer_network_size,int64,Number of unique P2P transfer contacts,none
+location_consistency_score,float64,Geographic stability score (0-100),none
+loan_product_category,object,ATB loan product category,none
+requested_amount_tnd,float64,Requested loan amount in Tunisian Dinars,none
+term_months,int64,Requested loan term in months,none
+max_financing_ratio,float64,Maximum LTV ratio for product (metadata),metadata_only
+max_term_months,int64,Maximum term for product (metadata),metadata_only
+product_cap_tnd,float64,Product amount cap in TND (metadata),metadata_only
+requires_appraisal_flag,int64,Requires asset appraisal (metadata),metadata_only
+TARGET,int64,"Loan outcome (1=default, 0=repaid)",target

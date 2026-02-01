@@ -1,0 +1,24 @@
+category,feature_name,source,description,transformation
+Identity/Demographics,applicant_id,SK_ID_CURR,Unique applicant identifier,direct_copy
+Identity/Demographics,age,DAYS_BIRTH,Age in years derived from days,abs(DAYS_BIRTH) / 365.25
+Identity/Demographics,gender,CODE_GENDER,Gender (M/F),direct_copy
+Identity/Demographics,governorate,REGION_RATING_CLIENT,Tunisia governorate (mapped from region rating),map_to_tunisia_governorates
+Identity/Demographics,education,NAME_EDUCATION_TYPE,Education level,map_to_tunisia_education
+Alternative Indicators - Payment Behavior,payment_on_time_rate,EXT_SOURCE_2,Historical on-time payment rate from mobile money/telecom bills,EXT_SOURCE_2 with noise
+Alternative Indicators - Payment Behavior,transaction_regularity_score,EXT_SOURCE_3,Consistency of financial transactions over time,EXT_SOURCE_3 with scaling
+Alternative Indicators - Payment Behavior,dispute_rate,AMT_REQ_CREDIT_BUREAU_QRT,Rate of payment disputes or chargebacks,normalized_inverse(AMT_REQ_CREDIT_BUREAU_QRT)
+Alternative Indicators - Telecom,months_with_provider,DAYS_EMPLOYED,Tenure with current telecom provider,"abs(DAYS_EMPLOYED) / 30, capped at 120"
+Alternative Indicators - Telecom,avg_monthly_airtime_tnd,AMT_ANNUITY,Average monthly mobile airtime spending,AMT_ANNUITY * 0.02 with noise
+Alternative Indicators - Telecom,mobile_topup_frequency,derived,Number of mobile top-ups per month,random_4_to_20_based_on_income
+Alternative Indicators - Telecom,business_hours_data_usage,OCCUPATION_TYPE,Percentage of data used during business hours,occupation_based_pattern
+Alternative Indicators - Mobile Money,mobile_money_account,derived,"Has active mobile money account (D17, e-dinar)",probabilistic_based_on_age_education
+Alternative Indicators - Mobile Money,avg_monthly_transactions,derived,Average monthly mobile money transactions,income_and_education_based
+Alternative Indicators - Marketplace,marketplace_seller_rating,EXT_SOURCE_2,Seller rating on e-commerce platforms (if applicable),"EXT_SOURCE_2 * 5, nullable for non-sellers"
+Alternative Indicators - Marketplace,completed_transactions,derived,Number of completed marketplace transactions,random_for_sellers_only
+Alternative Indicators - Remittances/Social,receives_remittances,derived,Receives international remittances,probabilistic_20_percent
+Alternative Indicators - Remittances/Social,avg_monthly_remittance_tnd,AMT_INCOME_TOTAL,Average monthly remittance amount,AMT_INCOME_TOTAL * 0.15 for receivers only
+Alternative Indicators - Remittances/Social,peer_transfer_network_size,derived,Number of unique peer-to-peer transfer contacts,random_2_to_30
+Alternative Indicators - Stability,location_consistency_score,REGION_RATING_CLIENT,Geographic stability based on transaction locations,region_rating_to_stability
+Product Context,loan_product_category,AMT_CREDIT + OCCUPATION_TYPE,ATB loan product category,rule_based_categorization
+Product Context,requested_amount_tnd,AMT_CREDIT,Requested loan amount in Tunisian Dinars,AMT_CREDIT * 0.33 (rough USD to TND)
+Product Context,term_months,AMT_CREDIT / AMT_ANNUITY,Requested loan term in months,calculated_from_credit_annuity

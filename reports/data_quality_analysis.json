@@ -1,0 +1,213 @@
+{
+  "quality": {
+    "total_records": 10000,
+    "total_features": 28,
+    "duplicates": {
+      "duplicate_rows": 0,
+      "duplicate_applicant_ids": 0
+    },
+    "missing_values": {
+      "marketplace_seller_rating": {
+        "count": 8030,
+        "percentage": 80.3
+      },
+      "product_cap_tnd": {
+        "count": 5113,
+        "percentage": 51.13
+      }
+    },
+    "data_types": {
+      "applicant_id": "int64",
+      "age": "int64",
+      "gender": "object",
+      "governorate": "object",
+      "education": "object",
+      "payment_on_time_rate": "float64",
+      "transaction_regularity_score": "float64",
+      "dispute_rate": "float64",
+      "months_with_provider": "int64",
+      "avg_monthly_airtime_tnd": "float64",
+      "mobile_topup_frequency": "int64",
+      "business_hours_data_usage": "float64",
+      "mobile_money_account": "int64",
+      "avg_monthly_transactions": "int64",
+      "marketplace_seller_rating": "float64",
+      "completed_transactions": "int64",
+      "receives_remittances": "int64",
+      "avg_monthly_remittance_tnd": "float64",
+      "peer_transfer_network_size": "int64",
+      "location_consistency_score": "float64",
+      "loan_product_category": "object",
+      "requested_amount_tnd": "float64",
+      "term_months": "int64",
+      "max_financing_ratio": "float64",
+      "max_term_months": "int64",
+      "product_cap_tnd": "float64",
+      "requires_appraisal_flag": "int64",
+      "TARGET": "int64"
+    }
+  },
+  "leakage": {
+    "high_risk_features": [],
+    "medium_risk_features": [
+      {
+        "feature": "payment_on_time_rate",
+        "correlation": -0.5780598273392467,
+        "reason": "Moderate correlation with TARGET (>0.4)"
+      },
+      {
+        "feature": "transaction_regularity_score",
+        "correlation": -0.4580574881812629,
+        "reason": "Moderate correlation with TARGET (>0.4)"
+      },
+      {
+        "feature": "marketplace_seller_rating",
+        "correlation": -0.5483063973583734,
+        "reason": "Moderate correlation with TARGET (>0.4)"
+      }
+    ],
+    "correlations": {
+      "age": {
+        "correlation": -0.0076936110640989114,
+        "p_value": 0.4417292947949464,
+        "abs_correlation": 0.0076936110640989114
+      },
+      "payment_on_time_rate": {
+        "correlation": -0.5780598273392467,
+        "p_value": 0.0,
+        "abs_correlation": 0.5780598273392467
+      },
+      "transaction_regularity_score": {
+        "correlation": -0.4580574881812629,
+        "p_value": 0.0,
+        "abs_correlation": 0.4580574881812629
+      },
+      "dispute_rate": {
+        "correlation": 0.2147562804521433,
+        "p_value": 1.1422542901498418e-104,
+        "abs_correlation": 0.2147562804521433
+      },
+      "months_with_provider": {
+        "correlation": -0.0031729927917133523,
+        "p_value": 0.7510460127257548,
+        "abs_correlation": 0.0031729927917133523
+      },
+      "avg_monthly_airtime_tnd": {
+        "correlation": -0.08369629725469437,
+        "p_value": 5.1466235997837796e-17,
+        "abs_correlation": 0.08369629725469437
+      },
+      "mobile_topup_frequency": {
+        "correlation": 0.0031417501650024063,
+        "p_value": 0.7534173553261015,
+        "abs_correlation": 0.0031417501650024063
+      },
+      "business_hours_data_usage": {
+        "correlation": -0.0007987922927331827,
+        "p_value": 0.9363412414221347,
+        "abs_correlation": 0.0007987922927331827
+      },
+      "mobile_money_account": {
+        "correlation": 0.007832302021942935,
+        "p_value": 0.43354237719434185,
+        "abs_correlation": 0.007832302021942935
+      },
+      "avg_monthly_transactions": {
+        "correlation": 0.008565187672171529,
+        "p_value": 0.3917614119948089,
+        "abs_correlation": 0.008565187672171529
+      },
+      "marketplace_seller_rating": {
+        "correlation": -0.5483063973583734,
+        "p_value": 5.023102508527592e-155,
+        "abs_correlation": 0.5483063973583734
+      },
+      "completed_transactions": {
+        "correlation": -0.0005247038098567815,
+        "p_value": 0.9581591187514341,
+        "abs_correlation": 0.0005247038098567815
+      },
+      "receives_remittances": {
+        "correlation": 0.02659851294845613,
+        "p_value": 0.00781431181227794,
+        "abs_correlation": 0.02659851294845613
+      },
+      "avg_monthly_remittance_tnd": {
+        "correlation": 0.025535964674430728,
+        "p_value": 0.010658699340929943,
+        "abs_correlation": 0.025535964674430728
+      },
+      "peer_transfer_network_size": {
+        "correlation": 0.017687970146204948,
+        "p_value": 0.07694157167643007,
+        "abs_correlation": 0.017687970146204948
+      },
+      "location_consistency_score": {
+        "correlation": 0.01395175851732576,
+        "p_value": 0.1629949316003243,
+        "abs_correlation": 0.01395175851732576
+      },
+      "requested_amount_tnd": {
+        "correlation": -0.08099480480152957,
+        "p_value": 4.987644873061613e-16,
+        "abs_correlation": 0.08099480480152957
+      },
+      "term_months": {
+        "correlation": 0.010670398343582903,
+        "p_value": 0.2860003678509837,
+        "abs_correlation": 0.010670398343582903
+      }
+    }
+  },
+  "affordability": {
+    "notes": "Affordability will be modeled as income bands.",
+    "potential_issues": [
+      {
+        "feature": "avg_monthly_airtime_tnd",
+        "note": "avg_monthly_airtime_tnd is used as input feature, ensure it does not directly encode income bands"
+      },
+      {
+        "feature": "avg_monthly_remittance_tnd",
+        "note": "avg_monthly_remittance_tnd is used as input feature, ensure it does not directly encode income bands"
+      }
+    ]
+  },
+  "distributions": {
+    "Business": {
+      "count": 1045,
+      "default_rate": 0.0937799043062201,
+      "avg_loan_amount": 46113.7183444976,
+      "avg_term_months": 35.82583732057416
+    },
+    "Vehicle": {
+      "count": 459,
+      "default_rate": 0.08932461873638345,
+      "avg_loan_amount": 40932.10167755992,
+      "avg_term_months": 37.34640522875817
+    },
+    "Housing": {
+      "count": 3705,
+      "default_rate": 0.05101214574898785,
+      "avg_loan_amount": 216408.1790499325,
+      "avg_term_months": 36.00026990553307
+    },
+    "Consumer": {
+      "count": 4428,
+      "default_rate": 0.09688346883468835,
+      "avg_loan_amount": 29818.436280487804,
+      "avg_term_months": 35.92186088527552
+    },
+    "Corporate": {
+      "count": 363,
+      "default_rate": 0.07988980716253444,
+      "avg_loan_amount": 86126.31487603307,
+      "avg_term_months": 36.31129476584022
+    }
+  },
+  "removed_columns": [
+    "product_cap_tnd",
+    "max_financing_ratio",
+    "requires_appraisal_flag",
+    "max_term_months"
+  ]
+}
